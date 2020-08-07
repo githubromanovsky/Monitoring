@@ -13,7 +13,7 @@ def send_message():
     return ()
 
 
-# Your ip or hostname
+# Your ip or hostname servers
 hostname = "Your ip-address server"
 hostname1 = "Your ip-address server"
 # Your api_token telegram bot

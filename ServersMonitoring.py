@@ -1,6 +1,5 @@
 #!/usr/bin/python3
 import os
-import sys
 import requests
 
 
@@ -9,23 +8,17 @@ def send_message():
     requests.get("https://api.telegram.org/bot{}/sendMessage?".format(api_token),
                  params=dict(chat_id="@Your Chanel Telegram",
                              text="Warning! Server {} not "
-                                  "available".format(hostname)))
+                                  "available".format(ip)))
     return ()
 
 
 # Your ip or hostname servers
-hostname = "Your ip-address server"
-hostname1 = "Your ip-address server"
+hostname = ["Your ip-address server1", "Your ip-address server1"]
 # Your api_token telegram bot
 api_token = "Your API-key"
-response = os.system("ping -c 10 " + hostname)
-if response == 0:
-    pass
-else:
-    send_message()
-response = os.system("ping -c 10 " + hostname1)
-if response == 0:
-    pass
-else:
-    send_message()
-sys.exit()
+for ip in hostname:
+    response = os.system("ping -c 10 " + ip)
+    if response == 0:
+        pass
+    else:
+        send_message()
